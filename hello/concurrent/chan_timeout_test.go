@@ -1,8 +1,11 @@
 package concurrent
 
-import "time"
+import (
+	"time"
+	"testing"
+)
 
-func main() {
+func TestChanTimeout(t *testing.T) {
 	c := make(chan int)
 	o := make(chan bool)
 	go func() {

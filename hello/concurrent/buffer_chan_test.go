@@ -1,8 +1,11 @@
 package concurrent
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func main() {
+func TestBufferChan(t *testing.T) {
 	c := make(chan int, 2)//修改2为1就报错，修改2为3可以正常运行
 	c <- 1
 	c <- 2

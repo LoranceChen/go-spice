@@ -1,26 +1,27 @@
 package main
 
 import (
-"fmt"
-"strconv"
+	"fmt"
+	"strconv"
+	"testing"
 )
 
 type Element interface{}
-type List [] Element
+type List []Element
 
 type Person struct {
 	name string
-	age int
+	age  int
 }
 
 //定义了String方法，实现了fmt.Stringer
 func (p Person) String() string {
-	return "(name: " + p.name + " - age: "+strconv.Itoa(p.age)+ " years)"
+	return "(name: " + p.name + " - age: " + strconv.Itoa(p.age) + " years)"
 }
 
-func main() {
+func TestCommaOk(t *testing.T) {
 	list := make(List, 3)
-	list[0] = 1 // an int
+	list[0] = 1       // an int
 	list[1] = "Hello" // a string
 	list[2] = Person{"Dennis", 70}
 

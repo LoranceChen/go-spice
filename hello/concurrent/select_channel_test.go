@@ -1,6 +1,9 @@
 package concurrent
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 func fibonacci2(c, quit chan int) {
 	x, y := 1, 1
@@ -15,7 +18,7 @@ func fibonacci2(c, quit chan int) {
 	}
 }
 
-func main() {
+func Test(t *testing.T) {
 	c := make(chan int)
 	quit := make(chan int)
 	go func() {

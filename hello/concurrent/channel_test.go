@@ -1,6 +1,9 @@
 package concurrent
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 func sum(a []int, c chan int) {
 	total := 0
@@ -10,7 +13,7 @@ func sum(a []int, c chan int) {
 	c <- total  // send total to c
 }
 
-func main() {
+func TestChannel(t *testing.T) {
 	a := []int{7, 2, 8, -9, 4, 0}
 
 	c := make(chan int)

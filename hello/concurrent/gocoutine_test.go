@@ -3,6 +3,7 @@ package concurrent
 import (
 	"fmt"
 	"runtime"
+	"testing"
 )
 
 func say(s string) {
@@ -12,7 +13,7 @@ func say(s string) {
 	}
 }
 
-func main() {
+func TestCoutine(t *testing.T) {
 	go say("world") //开一个新的Goroutines执行
 	say("hello") //当前Goroutines执行
 }
